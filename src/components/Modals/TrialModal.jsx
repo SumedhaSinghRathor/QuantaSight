@@ -10,7 +10,7 @@ function TrialModal({ onClose }) {
     <div
       ref={modalRef}
       onClick={closeModal}
-      className="fixed inset-0 flex justify-center items-center bg-black/20 p-12 z-50"
+      className="fixed inset-0 flex justify-center items-center bg-black/50 p-12 z-50"
     >
       <section
         className="bg-white w-full h-full rounded-2xl flex"

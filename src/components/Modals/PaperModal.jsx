@@ -10,7 +10,7 @@ function PaperModal({ onClose }) {
     <div
       ref={modalRef}
       onClick={closeModal}
-      className="fixed inset-0 flex justify-center items-center bg-black/20 backdrop-blur-sm p-12 z-50"
+      className="fixed inset-0 flex justify-center items-center bg-black/50 backdrop-blur-sm p-12 z-50"
     >
       <section className="bg-white w-full h-full rounded-2xl flex">
         <div className="w-1/4 h-full p-5 border-r border-border flex flex-col justify-between">

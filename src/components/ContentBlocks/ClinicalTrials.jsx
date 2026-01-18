@@ -13,7 +13,7 @@ function ClinicalTrials({
     type: "trial",
     title:
       "An Extension Study to Evaluate the Long-Term Safety of Lampalizumab in Participants With Geographic Atrophy",
-    type: "Terminated",
+    status: "Terminated",
   };
 
   const isSelected = selectedItems.some((p) => p.id === item.id);
@@ -36,7 +36,7 @@ function ClinicalTrials({
       </h1>
       <div className="flex justify-between items-center">
         <div className="px-2 py-1 bg-grey text-white w-fit rounded-full text-xs">
-          {item.type}
+          {item.status}
         </div>
         <i className="bx bx-star text-xl" />
       </div>

@@ -13,7 +13,7 @@ function KOLs({
     type: "kol",
     name: "Jimmy Kuang-hsien Hu",
     location: "California, United States",
-    type: "Academic",
+    status: "Academic",
     college: "Rothschild Foundation",
   };
 
@@ -45,7 +45,7 @@ function KOLs({
         </div>
         <div className="flex gap-1 border border-border px-2 py-0.5 rounded-full">
           <i className="bx bxs-user-detail" />
-          <p className="text-xs">{item.type}</p>
+          <p className="text-xs">{item.status}</p>
         </div>
       </div>
       {showModal && <KOLModal onClose={() => setShowModal(false)} />}

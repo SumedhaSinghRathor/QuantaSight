@@ -47,7 +47,7 @@ function ContentNav({ activeContent, setActiveContent }) {
             }`}
             onClick={() => contentToggle(c)}
           >
-            {item ? item.icon : null}{" "}
+            {item ? item.icon : null + " "}
             <span className={activeContent === c ? "" : "hidden"}>{c}</span>
           </button>
         );

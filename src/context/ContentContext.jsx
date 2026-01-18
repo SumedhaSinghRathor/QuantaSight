@@ -5,8 +5,8 @@ const ContentContext = createContext();
 export const ContentProvider = ({ children }) => {
   const [selectedContent, setSelectedContent] = useState([
     "Research Papers",
-    "Company Information",
-    "Key Opinion Leaders",
+    "Guidelines",
+    "Clinical Trials",
   ]);
 
   const [apollo, setApollo] = useState(false);

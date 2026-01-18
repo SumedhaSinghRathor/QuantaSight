@@ -13,7 +13,7 @@ function Guidelines({ attachMode, selectedItems, setSelectedItems }) {
   return (
     <div
       className={`border-border bg-white hover:bg-border p-2.5 rounded-lg cursor-pointer border transition flex flex-col gap-2 ${attachMode && isSelected && "ring-2 ring-dark-blue bg-dark-blue/20"}`}
-      onClick={toggleAttach(item, setSelectedItems)}
+      onClick={() => toggleAttach(item, setSelectedItems)}
     >
       <h1 className="font-semibold leading-tight text-center">{item.name}</h1>
       <hr />

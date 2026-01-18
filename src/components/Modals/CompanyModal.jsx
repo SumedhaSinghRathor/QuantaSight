@@ -141,7 +141,7 @@ function CompanyModal({ onClose }) {
     <div
       ref={modalRef}
       onClick={closeModal}
-      className="fixed inset-0 flex justify-center items-center bg-black/20 p-12 z-100"
+      className="fixed inset-0 flex justify-center items-center bg-black/50 p-12 z-100"
     >
       <section
         className="bg-white w-full h-full rounded-2xl flex flex-col items-center gap-5 p-5"
