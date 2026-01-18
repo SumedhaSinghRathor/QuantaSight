@@ -8,7 +8,7 @@ function Navbar() {
   return (
     <div className="flex justify-between items-center p-1.5 border-b border-b-border">
       <Link to="/" className="flex items-center gap-2 p-2">
-        <img src={Logo} />
+        <img src={Logo} alt="logo" />
       </Link>
       <nav className="text-sm flex gap-10 font-bold text-dark-blue">
         <NavLink

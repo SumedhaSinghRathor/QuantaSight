@@ -1,5 +1,5 @@
 function Conferences() {
-  return <div>Conferences</div>;
+  return <div className="p-2.5">Conferences</div>;
 }
 
 export default Conferences;

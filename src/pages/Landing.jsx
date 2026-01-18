@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Search from "./Search";
+import Search from "../components/Search";
 import { useContent } from "../context/ContentContext";
 
 function Landing() {

@@ -1,5 +1,5 @@
 import Navbar from "./components/Navbar";
-import Landing from "./components/Landing";
+import Landing from "./pages/Landing";
 import { Route, Routes } from "react-router-dom";
 import Xtract from "./pages/Xtract";
 import Atlas from "./pages/Atlas";

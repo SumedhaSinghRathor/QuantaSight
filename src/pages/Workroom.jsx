@@ -1,5 +1,5 @@
 function Workroom() {
-  return <div>Workroom</div>;
+  return <div className="p-2.5">Workroom</div>;
 }
 
 export default Workroom;
