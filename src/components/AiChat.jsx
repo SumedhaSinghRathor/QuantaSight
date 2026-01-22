@@ -22,9 +22,12 @@ function AiChat({
     const userMsg = {
       role: "user",
       content: input,
+      attachments: selectedItems,
     };
     setMessages((prev) => [...prev, userMsg]);
+    setSelectedItems([]);
     setInput("");
+    setAttachMode(false);
 
     setTimeout(() => {
       const aiMsg = {
@@ -40,16 +43,23 @@ function AiChat({
       <h1 className="text-xl font-bold text-dark-blue">AI Assistant</h1>
       <div className="grow content-center w-full flex flex-col justify-end gap-2">
         {messages.map((msg, i) => (
-          <div
-            key={i}
-            className={`py-1 px-3 rounded-lg max-w-3/4 w-fit ${
-              msg.role === "user"
-                ? "bg-bg text-grey border border-border rounded-lg self-end"
-                : "bg-dark-blue text-white"
-            }`}
-          >
-            {msg.content}
-          </div>
+          <>
+            <div
+              key={i}
+              className={`py-1 px-3 rounded-lg max-w-3/4 w-fit ${
+                msg.role === "user"
+                  ? "bg-bg text-grey border border-border self-end"
+                  : "bg-dark-blue text-white"
+              }`}
+            >
+              {msg.content}
+            </div>
+            {msg.attachments && msg.attachments.length > 0 && (
+              <div className="w-fit self-end text-xs px-2 rounded-full bg-border">
+                {selectedItems.length} files added
+              </div>
+            )}
+          </>
         ))}
       </div>
       <div className="w-full border border-border p-2.5">
