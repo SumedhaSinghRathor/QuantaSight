@@ -8,6 +8,7 @@ import Dashboard from "./pages/Dashboard";
 import Conferences from "./pages/Conferences";
 import News from "./pages/News";
 import { ContentProvider } from "./context/ContentContext";
+import Profile from "./pages/Profile";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/conferences" element={<Conferences />} />
           <Route path="/news" element={<News />} />
+          <Route path="/user/:user" element={<Profile />} />
         </Routes>
       </ContentProvider>
     </>

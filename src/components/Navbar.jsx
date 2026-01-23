@@ -57,7 +57,12 @@ function Navbar() {
       <div className="flex gap-5 text-xl">
         <i className="border border-border rounded hover:bg-border p-0.5 bx bx-play" />
         <i className="border border-border rounded hover:bg-border p-0.5 bx bxs-bell" />
-        <i className="border border-border rounded hover:bg-border p-0.5 bx bxs-user" />
+        <NavLink
+          to="/user/username"
+          className={({ isActive }) =>
+            `bx bxs-user border border-border rounded hover:bg-border p-0.5 ${isActive ? "bg-border" : ""}`
+          }
+        />
       </div>
     </div>
   );
