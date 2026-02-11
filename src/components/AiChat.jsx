@@ -43,23 +43,25 @@ function AiChat({
       <h1 className="text-xl font-bold text-dark-blue">AI Assistant</h1>
       <div className="grow content-center w-full flex flex-col justify-end gap-2">
         {messages.map((msg, i) => (
-          <>
+          <div
+            key={i}
+            className={`max-w-3/4 w-fit flex flex-col gap-1 ${msg.role === "user" ? "self-end" : ""}`}
+          >
             <div
-              key={i}
-              className={`py-1 px-3 rounded-lg max-w-3/4 w-fit ${
+              className={`py-1 px-3 rounded-lg ${
                 msg.role === "user"
-                  ? "bg-bg text-grey border border-border self-end"
+                  ? "bg-bg text-grey border border-border"
                   : "bg-dark-blue text-white"
               }`}
             >
               {msg.content}
             </div>
             {msg.attachments && msg.attachments.length > 0 && (
-              <div className="w-fit self-end text-xs px-2 rounded-full bg-border">
+              <div className="w-fit self-end text-xs px-2 rounded-full bg-border font-semibold">
                 {selectedItems.length} files added
               </div>
             )}
-          </>
+          </div>
         ))}
       </div>
       <div className="w-full border border-border p-2.5">
