@@ -14,6 +14,10 @@ function Landing() {
     "Key Opinion Leaders",
   ];
   const { selectedContent, setSelectedContent } = useContent();
+  const [keywords, setKeywords] = useState([]);
+  const [andInput, setAndInput] = useState("");
+  const [notInput, setNotInput] = useState("");
+  const [orInput, setOrInput] = useState("");
 
   const toggleContent = (content) => {
     if (selectedContent.includes(content)) {
@@ -27,6 +31,18 @@ function Landing() {
     }
   };
 
+  const addKeyword = (value, setInput) => {
+    if (!value.trim()) return;
+    if (setInput === setAndInput) {
+      setKeywords((prev) => [...prev, "& " + value.trim()]);
+    } else if (setInput === setNotInput) {
+      setKeywords((prev) => [...prev, "!" + value.trim()]);
+    } else if (setInput === setOrInput) {
+      setKeywords((prev) => [...prev, "|| " + value.trim()]);
+    }
+    setInput("");
+  };
+
   return (
     <div className="w-full h-[90vh] flex flex-col items-center justify-center gap-5">
       <h1 className="text-6xl text-dark-blue font-semibold">
@@ -38,16 +54,22 @@ function Landing() {
       {showFilters ? (
         <div className="flex flex-col gap-8 items-center w-3/4">
           <div className="flex justify-between gap-8 w-full">
-            <div className="bg-white border border-border p-5 rounded-lg flex flex-col gap-5">
+            <div className="bg-white border border-border p-5 rounded-lg flex flex-col gap-2">
               <h1 className="text-xl font-bold">Keywords</h1>
+              <div className="text-xs text-wrap">{keywords.join(" ")}</div>
               <div>
                 <p className="text-xs font-bold">contains (and)</p>
                 <div className="flex gap-2.5">
                   <input
                     type="text"
+                    value={andInput}
+                    onChange={(e) => setAndInput(e.target.value)}
                     className="p-1 border border-border text-xs rounded-xs"
                   />
-                  <button className="text-grey bg-border rounded-xs py-1 px-3 font-bold">
+                  <button
+                    onClick={() => addKeyword(andInput, setAndInput)}
+                    className="text-sm text-grey bg-border active:bg-gray-400 rounded-xs py-1 px-3 font-bold"
+                  >
                     Add
                   </button>
                 </div>
@@ -57,9 +79,14 @@ function Landing() {
                 <div className="flex gap-2.5">
                   <input
                     type="text"
+                    value={notInput}
+                    onChange={(e) => setNotInput(e.target.value)}
                     className="p-1 border border-border text-xs rounded-xs"
                   />
-                  <button className="text-grey bg-border rounded-xs py-1 px-3 font-bold">
+                  <button
+                    onClick={() => addKeyword(notInput, setNotInput)}
+                    className="text-sm text-grey bg-border active:bg-gray-400 rounded-xs py-1 px-3 font-bold"
+                  >
                     Add
                   </button>
                 </div>
@@ -69,9 +96,14 @@ function Landing() {
                 <div className="flex gap-2.5">
                   <input
                     type="text"
+                    value={orInput}
+                    onChange={(e) => setOrInput(e.target.value)}
                     className="p-1 border border-border text-xs rounded-xs"
                   />
-                  <button className="text-grey bg-border rounded-xs py-1 px-3 font-bold">
+                  <button
+                    onClick={() => addKeyword(orInput, setOrInput)}
+                    className="text-sm text-grey bg-border active:bg-gray-400 rounded-xs py-1 px-3 font-bold"
+                  >
                     Add
                   </button>
                 </div>
